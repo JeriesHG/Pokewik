@@ -15,13 +15,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="http://placehold.it/800x300" alt="Image 1">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="http://placehold.it/800x300" alt="Image 2">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="http://placehold.it/800x300" alt="Image 3">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev" ng-non-bindable>
@@ -36,6 +36,9 @@
                 </div>
 
                 <div class="row">
+                <div ng-controller="PokedexController">
+                  <button ng-click="getPokemons()">OK</button>
+                </div>
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
