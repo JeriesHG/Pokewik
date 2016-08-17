@@ -43,11 +43,20 @@ exports.delete = function(req, res) {
  * List of Pokedexes
  */
 exports.list = function(req, res) {
-	p.getPokemonByName('eevee') // with Promise 
-		.then(function(response) {
-			console.log(response);
-		})
-		.catch(function(error) {
-			console.log('There was an ERROR: ', error);
+	var pokemonIds = [12, 70];
+	var promises = [];
+	var result = [];
+
+	for (let pokemon of pokemonIds) {
+		promises.push(p.getPokemonByName(pokemon));
+	}
+
+	Promise.all(promises).then(function(dataArr) {
+		dataArr.forEach(function(data) {
+			result.push(data);
 		});
+		res.send(result);
+	}).catch(function(err) {
+		console.log(err);
+	});
 };

@@ -10,5 +10,9 @@ app.factory('pokedexFactory', ['$http', function($http) {
 		return $http.get(urlBase + '/all');
 	};
 
+	pokedexFactory.extractURLInfo = function(resource) {
+		return $http.get(resource);
+	};
+
 	return pokedexFactory;
 }]);

@@ -36,11 +36,22 @@
                 </div>
 
                 <div class="row">
-                <div ng-controller="PokedexController">
-                  <button ng-click="getPokemons()">OK</button>
+                <div ng-controller="PokedexController" ng-init="getPokemons()">
+                    <div ng-repeat="pokemon in pokemons">
+                      <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="{{pokemon.img}}" alt="">
+                                <div class="caption">
+                                    <h4><a href="#">{{pokemon.name}}</a>
+                                    </h4>
+                                    <p</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+                    <!-- div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
@@ -61,7 +72,7 @@
                                 <p>Descripcion de pokemon 2</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
         </div>
