@@ -36,15 +36,23 @@
                 </div>
 
                 <div class="row">
+
+
                 <div ng-controller="PokedexController" ng-init="getPokemons()">
-                    <div ng-repeat="pokemon in pokemons">
+
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" ng-model="pokemonObj">
+                  </div>
+
+                    <div ng-repeat="pokemon in pokemons | filter:pokemonObj">
                       <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
-                                <img src="{{pokemon.img}}" alt="">
+                                <img ng-src="{{pokemon.sprites.front_default}}" alt="">
                                 <div class="caption">
                                     <h4><a href="#">{{pokemon.name}}</a>
                                     </h4>
-                                    <p</p>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>

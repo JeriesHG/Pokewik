@@ -43,7 +43,7 @@ exports.delete = function(req, res) {
  * List of Pokedexes
  */
 exports.list = function(req, res) {
-	var pokemonIds = [12, 70];
+	var pokemonIds = [1,2,3,4,5,6,7,8,9,10,11,12];
 	var promises = [];
 	var result = [];
 
