@@ -43,12 +43,11 @@ exports.delete = function(req, res) {
  * List of Pokedexes
  */
 exports.list = function(req, res) {
-	var pokemonIds = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
 	var promises = [];
 	var result = [];
 
-	for (let pokemon of pokemonIds) {
-		promises.push(p.getPokemonByName(pokemon));
+	for (var i = 1;i<25;i++) {
+		promises.push(p.getPokemonByName(i));
 	}
 
 	Promise.all(promises).then(function(dataArr) {

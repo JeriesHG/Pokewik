@@ -1,69 +1,55 @@
 <section ng-controller="HomeController">
     <!-- Page Content -->
     <div class="container">
-
         <div class="row">
-
-                <div class="row carousel-holder">
-
-                    <div class="col-md-12">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="Image 1">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="Image 2">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="Image 3">
-                                </div>
+            <div class="row carousel-holder">
+                <div class="col-md-12">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="slide-image" src="http://placehold.it/800x300" alt="Image 1">
                             </div>
-                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev" ng-non-bindable>
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                            </a>
-                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next" ng-non-bindable>
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                            </a>
+                            <div class="item">
+                                <img class="slide-image" src="http://placehold.it/800x300" alt="Image 2">
+                            </div>
+                            <div class="item">
+                                <img class="slide-image" src="http://placehold.it/800x300" alt="Image 3">
+                            </div>
                         </div>
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev" ng-non-bindable>
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next" ng-non-bindable>
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
                     </div>
-
                 </div>
-                
-                <div class="row">
+            </div>
+            
+            <div class="row" ng-controller="PokedexController" ng-init="getPokemons()">
 
-                 
-
-                <div ng-controller="PokedexController" ng-init="getPokemons()">
-
-                  <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" ng-model="pokemonObj">
-                  </div>
-                  
-                  <ng-include src="'/modules/core/client/views/spinner.html'" ng-show="showSpinner"></ng-include>
-                    <div ng-repeat="pokemon in pokemons | filter:pokemonObj">
-                      <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img ng-src="{{pokemon.sprites.front_default}}" alt="">
-                                <div class="caption">
-                                    <h4><a href="#">{{pokemon.name}}</a>
-                                    </h4>
-                                    <p></p>
-                                </div>
+                <div class="input-group search-wrapper">
+                    <span class="input-group-addon" id="basic-addon1">Search</span>
+                    <input type="text" class="form-control" placeholder="Pokemon" aria-describedby="basic-addon1" ng-model="pokemonObj">
+                </div>
+                <ng-include src="'/modules/core/client/views/spinner.html'" ng-show="showSpinner"></ng-include>
+                <div ng-repeat="pokemon in pokemons | filter:pokemonObj">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img ng-src="{{pokemon.sprites.front_default}}" alt="">
+                            <div class="caption">
+                                <h4><a href="#">{{pokemon.name | capitalize}}</a> </h4>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                </div>
+            </div>
         </div>
-
     </div>
     <!-- /.container -->
 </section>
