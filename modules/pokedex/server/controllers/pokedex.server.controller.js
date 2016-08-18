@@ -51,10 +51,7 @@ exports.list = function(req, res) {
 	}
 
 	Promise.all(promises).then(function(dataArr) {
-		dataArr.forEach(function(data) {
-			result.push(data);
-		});
-		res.send(result);
+		res.send(dataArr);
 	}).catch(function(err) {
 		console.log(err);
 	});
