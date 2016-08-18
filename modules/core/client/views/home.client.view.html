@@ -34,9 +34,10 @@
                     </div>
 
                 </div>
-
+                
                 <div class="row">
 
+                 
 
                 <div ng-controller="PokedexController" ng-init="getPokemons()">
 
@@ -44,7 +45,8 @@
                     <span class="input-group-addon" id="basic-addon1">@</span>
                     <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" ng-model="pokemonObj">
                   </div>
-
+                  
+                  <ng-include src="'/modules/core/client/views/spinner.html'" ng-show="showSpinner"></ng-include>
                     <div ng-repeat="pokemon in pokemons | filter:pokemonObj">
                       <div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
@@ -58,29 +60,6 @@
                         </div>
                     </div>
                 </div>
-
-                    <!-- div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4><a href="#">Pokemon 1</a>
-                                </h4>
-                                <p>Descripcion de pokemon 1</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4><a href="#">Pokemon 2</a>
-                                </h4>
-                                <p>Descripcion de pokemon 2</p>
-                            </div>
-                        </div>
-                    </div> -->
 
                 </div>
         </div>
