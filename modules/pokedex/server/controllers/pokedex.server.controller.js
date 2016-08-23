@@ -46,7 +46,7 @@ exports.list = function(req, res) {
 	var promises = [];
 	var result = [];
 
-	for (var i = 1;i<5;i++) {
+	for (var i = 1;i<22;i++) {
 		promises.push(p.getPokemonByName(i));
 	}
 
