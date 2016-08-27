@@ -64,3 +64,27 @@ footer {
     font-family: "Flexo-Regular",arial,sans-serif;
     text-transform: none;
 }
+
+#pokemonDetailBody{
+    min-height: 35vh;
+
+}
+#pokemonDetailBody #detail{
+    border-left: dashed;
+    
+    min-height: 35vh;
+
+}
+#pokemonType{
+    text-align: center;
+
+}
+#pokemonType label{
+    size: 25px!important;
+    color: dimgrey;
+}
+#pokemonType span{
+    color: orange;
+    font-size: 20px;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial!important;
+}

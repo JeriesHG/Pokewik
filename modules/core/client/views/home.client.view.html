@@ -50,7 +50,7 @@
                   <div class="col-xs-4">
                     <label>Número</label>
 
-                      <input type="text" class="input-lg" ng-model="pokemonObj.order">
+                      <input type="text" class="input-lg" ng-model="pokemonObj.id">
                       <label class="input-lg  label-warning">
                         <span class="glyphicon glyphicon-search "></span>
                       </label>
@@ -67,7 +67,7 @@
 
                 <div ng-repeat="pokemon in pokemons | filter:pokemonObj">
                     <div class="col-sm-3 col-lg-3 col-md-3">
-                        <div class="well well-lg" style="text-align: center;" ng-click="open()">
+                        <div class="well well-lg" style="text-align: center;" ng-click="open('',pokemon)">
                             <img class="hvr-buzz" ng-src="{{pokemon.sprites.front_shiny}}" width="140">
                             <div class="caption">
                                 <h4><a href="#">{{pokemon.name | capitalize}}</a> </h4>
@@ -77,27 +77,60 @@
                         </div>
                     </div>
                 </div>
+
+              <script type="text/ng-template" id="modalPokemonDetail">
+                <div class="modal-header">
+                  <h3 class="modal-title">{{getPokemon().name}}</h3>
+                </div>
+                <div id="pokemonDetailBody" class="modal-body">
+                  <div class="row">
+
+                      <div class="col-sm-5">
+
+
+                        <div id="pokemonType">
+                          <label >Tipo: </label>
+                          <span ng-repeat="type in getPokemon().types">{{type.type.name + ' '}}</span>
+                        </div>
+
+
+                        <ng-include src="'/modules/core/client/views/spinner.html'" ng-show="getPokeFormImg()==null"></ng-include>
+                        <div class="" >
+
+
+
+                          <img  ng-src="{{getPokeFormImg()}}" width="200" ng-click="nextPokeForm()">
+                          <!--div class="caption">
+                            <h4><a href="#">{{pokemon.name | capitalize}}</a> </h4>
+                          </div-->
+
+                          <button class="btn btn-default" ng-click="prevPokeForm()" ng-hide="getPokeFormImg()==null">
+                              <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                          </button>
+
+                          <button class="btn btn-default" ng-click="nextPokeForm()" ng-hide="getPokeFormImg()==null" style="float: right;">
+                            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                          </button>
+
+
+                        </div>
+                      </div>
+
+                      <div id="detail" class="col-sm-7">
+
+                      </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" ng-click="ok()">OK</button>
+                  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                </div>
+              </script>
+
             </div>
         </div>
     </div>
-    <!-- /.container -->
-  <script type="text/ng-template" id="myModalContent.html">
-    <div class="modal-header">
-      <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
-    </div>
-    <div class="modal-body" id="modal-body">
-      <ul>
-        <li ng-repeat="item in $ctrl.items">
-          <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
-        </li>
-      </ul>
-      Selected: <b>{{ $ctrl.selected.item }}</b>
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
-      <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
-    </div>
-  </script>
+
 
 
 </section>

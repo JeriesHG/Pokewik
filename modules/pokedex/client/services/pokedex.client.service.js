@@ -10,6 +10,10 @@ app.factory('pokedexFactory', ['$http', function($http) {
 		return $http.get(urlBase + '/all');
 	};
 
+	pokedexFactory.getForms = function(pokemonId){
+		return $http.get('http://pokeapi.co/api/v2/pokemon-form/'+pokemonId+'/')
+	}
+
 	pokedexFactory.extractURLInfo = function(resource) {
 		return $http.get(resource);
 	};
