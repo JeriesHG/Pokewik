@@ -22,4 +22,8 @@ angular.module('pokedex').controller('PokedexController', ['$scope', 'pokedexFac
         console.log(error);
       });
   };
+
+
+
+
 }]);
