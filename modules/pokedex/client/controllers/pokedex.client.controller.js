@@ -45,7 +45,7 @@ angular.module('pokedex').controller('PokedexController', ['$scope', 'pokedexFac
     modalInstance.result.then(function (selectedItem) {
       $scope.selected = selectedItem;
     }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
+      //$log.info('Modal dismissed at: ' + new Date());
     });
   };
 
@@ -59,33 +59,33 @@ angular.module('pokedex').controller('PokedexController', ['$scope', 'pokedexFac
 angular.module('pokedex').controller('ModalPokemonDetail', function ($scope, $modalInstance,pokedexFactory, pokemon) {
   $scope.getPokemon = function(){
     return pokemon;
-  }
-  var pokeForms = []
-  var idxPokeForm = 2
+  };
+  var pokeForms = [];
+  var idxPokeForm = 2;
   $scope.getPokeFormImg = function(){
-    if(pokeForms.length == 0)
+    if(pokeForms.length === 0)
       return null;
     return pokeForms[idxPokeForm];
-  }
+  };
 
 
   $scope.nextPokeForm =function(){
-    if(idxPokeForm == 3){
-      idxPokeForm = 0
+    if(idxPokeForm === 3){
+      idxPokeForm = 0;
     }
     else{
       idxPokeForm ++;
     }
-  }
+  };
 
   $scope.prevPokeForm =function(){
-    if(idxPokeForm == 0){
-      idxPokeForm = 3
+    if(idxPokeForm === 0){
+      idxPokeForm = 3;
     }
     else{
       idxPokeForm --;
     }
-  }
+  };
 
   /*
    * Object
@@ -95,7 +95,7 @@ angular.module('pokedex').controller('ModalPokemonDetail', function ($scope, $mo
    front_shiny:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png"*/
   pokedexFactory.getForms(pokemon.id).then(function(res){
     console.log(res);
-    var resPokemon = res.data
+    var resPokemon = res.data;
     pokeForms.push(resPokemon.sprites.front_default);
     pokeForms.push(resPokemon.sprites.back_default);
     pokeForms.push(resPokemon.sprites.front_shiny);

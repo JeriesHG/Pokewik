@@ -11,8 +11,8 @@ app.factory('pokedexFactory', ['$http', function($http) {
 	};
 
 	pokedexFactory.getForms = function(pokemonId){
-		return $http.get('http://pokeapi.co/api/v2/pokemon-form/'+pokemonId+'/')
-	}
+		return $http.get('http://pokeapi.co/api/v2/pokemon-form/'+pokemonId+'/');
+	};
 
 	pokedexFactory.extractURLInfo = function(resource) {
 		return $http.get(resource);
