@@ -41,21 +41,22 @@ body {
     color: #d17581;
 }
 
-.thumbnail {
-    padding: 0;
-}
-
-.thumbnail .caption-full {
-    padding: 9px;
-    color: #333;
-}
 
 footer {
     margin: 50px 0;
 }
 
 #searchContainer{
-    background-color: #313131;
+    /*background-color: #313131;*/
+    /*background-color: white;*/
+    background-image: url("../img/pokedexhead.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 98%;
+    margin: 0 auto;
+    height: 180px;
+    margin-bottom: 30px;
+
 }
 #searchContainer label{
 
@@ -63,6 +64,7 @@ footer {
     font-size: x-large;
     font-family: "Flexo-Regular",arial,sans-serif;
     text-transform: none;
+
 }
 
 #pokemonDetailBody{
@@ -87,4 +89,27 @@ footer {
     color: orange;
     font-size: 20px;
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial!important;
+}
+
+body{
+    background: url("../img/Pokemon-Legendary-Wallpaper.jpg") no-repeat center fixed;
+    backgorund-size:cover;
+}
+
+#pokemonContainer .well {
+    padding: 0px;
+    background: rgba(136, 163, 180, 0.4);
+
+
+}
+#pokemonContainer .well a{
+    text-decoration: none;
+    color:white;
+    font-size: x-large;
+    margin-bottom: 0px;
+}
+
+#pokemonContainer .well .panel{
+    margin-bottom:0px;
+    background-color: darkorange;
 }

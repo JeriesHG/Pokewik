@@ -18,15 +18,11 @@
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
-
-
-.loading {
-    height: 72px;
-    width: 264px;
-    margin: 0 auto;
-    padding: 10px 0 10px 0;
-}
-
+#loading {
+  height: 72px;
+  width: 264px;
+  margin: 0 auto;
+  padding: 10px 0 10px 0; }
 
 .pokeball {
   width: 4px;

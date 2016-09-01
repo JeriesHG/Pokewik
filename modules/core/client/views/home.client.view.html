@@ -1,10 +1,10 @@
 
 <section ng-controller="HomeController">
     <!-- Page Content -->
-    <div class="container">
-        <div class="row">
+    <div class="container" id="">
+        <div class="col-md-10 col-md-offset-1">
             <div class="row carousel-holder">
-                <div class="col-md-12">
+                <!--div class="col-md-12">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -29,22 +29,21 @@
                             <span class="glyphicon glyphicon-chevron-right"></span>
                         </a>
                     </div>
-                </div>
+                </--div-->
             </div>
 
             <div class="row" ng-controller="PokedexController" ng-init="getPokemons()">
 
 
-                <div id="searchContainer" class="jumbotron">
-                <div class="row">
-                  <div class="col-xs-4">
+                <div id="searchContainer" class="">
+                <div class="">
+                  <br><br><br><br>
+                  <div class="col-xs-offset-8 col-xs-4">
                     <label>Nombre</label>
-
-                      <input type="text" class="input-lg" ng-model="pokemonObj.name">
-                      <label class="input-lg  label-warning">
-                        <span class="glyphicon glyphicon-search "></span>
-                      </label>
-
+                    <div class="input-group input-group-lg">
+                      <input type="text" class="form-control" ng-model="pokemonObj.name">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-search "></span></span>
+                    </div>
                   </div>
 
                   <!--div class="col-xs-4">
@@ -65,12 +64,12 @@
                 <ng-include src="'/modules/core/client/views/spinner.html'" ng-show="showSpinner"></ng-include>
 
 
-                <div ng-repeat="pokemon in pokemons | filter:pokemonObj">
+                <div id="pokemonContainer" ng-repeat="pokemon in pokemons | filter:pokemonObj">
                     <div class="col-sm-3 col-lg-3 col-md-3">
                         <div class="well well-lg" style="text-align: center;" ng-click="open('',pokemon)">
                             <img class="hvr-buzz" ng-src="{{pokemon.sprites.front_shiny}}" width="140">
-                            <div class="caption">
-                                <h4><a href="#">{{pokemon.name | capitalize}}</a> </h4>
+                            <div class="">
+                                <a href="#" class="">{{pokemon.name | capitalize}}</a>
                             </div>
 
 
