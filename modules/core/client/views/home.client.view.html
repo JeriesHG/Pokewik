@@ -1,5 +1,4 @@
-
-<section ng-controller="HomeController">
+<section ng-controller="HomeController" xmlns="http://www.w3.org/1999/html">
     <!-- Page Content -->
     <div class="container" id="">
         <div class="col-md-10 col-md-offset-1">
@@ -62,8 +61,6 @@
 
 
                 <ng-include src="'/modules/core/client/views/spinner.html'" ng-show="showSpinner"></ng-include>
-
-
                 <div id="pokemonContainer" ng-repeat="pokemon in pokemons | filter:pokemonObj">
                     <div class="col-sm-3 col-lg-3 col-md-3">
                         <div class="well well-lg" style="text-align: center;" ng-click="open('',pokemon)">
@@ -77,51 +74,104 @@
                     </div>
                 </div>
 
+              <link rel="stylesheet" type="text/css" href="/modules/core/client/css/style.css">
               <script type="text/ng-template" id="modalPokemonDetail">
-                <div class="modal-header">
-                  <h3 class="modal-title">{{getPokemon().name}}</h3>
-                </div>
-                <div id="pokemonDetailBody" class="modal-body">
-                  <div class="row">
 
-                      <div class="col-sm-5" >
-                        <div id="pokemonType">
-                          <label >Tipo: </label>
-                          <span ng-repeat="type in getPokemon().types">{{type.type.name + ' '}}</span>
-                        </div>
-
-                        <div class="col-xs-12">
-                          <ng-include src="'/modules/core/client/views/shortSpinner.html'" ng-show="getPokeFormImg()==null"></ng-include>
-                        </div>
-
-                        <div>
-
-                          <img  ng-src="{{getPokeFormImg()}}" width="200" ng-click="nextPokeForm()">
-
-
-                          <button class="btn btn-default" ng-click="prevPokeForm()" ng-hide="getPokeFormImg()==null">
-                              <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                          </button>
-
-                          <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-
-                          <button class="btn btn-default" ng-click="nextPokeForm()" ng-hide="getPokeFormImg()==null" style="float: right;">
-                            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                          </button>
-
-
-                        </div>
+                <div id="pokedex">
+                  <div id="left">
+                    <div id="logo"></div>
+                    <div id="bg_curve1_left"></div>
+                    <div id="bg_curve2_left"></div>
+                    <div id="curve1_left">
+                      <div id="buttonGlass">
+                        <div id="reflect"> </div>
                       </div>
-
-                      <div id="detail" class="col-sm-7">
-
+                      <div id="miniButtonGlass1"></div>
+                      <div id="miniButtonGlass2"></div>
+                      <div id="miniButtonGlass3"></div>
+                    </div>
+                    <div id="curve2_left">
+                      <div id="junction">
+                        <div id="junction1"></div>
+                        <div id="junction2"></div>
                       </div>
+                    </div>
+                    <div id="screen">
+                      <div id="topPicture">
+                        <div id="buttontopPicture1"></div>
+                        <div id="buttontopPicture2"></div>
+                      </div>
+                      <div id="picture">
+                        <ng-include src="'/modules/core/client/views/shortSpinner.html'" ng-show="getPokeFormImg()==null"></ng-include>
+                        <img  ng-src="{{getPokeFormImg()}}" width="200" ng-click="nextPokeForm()">
+                      </div>
+                      <div id="buttonbottomPicture"></div>
+                      <div id="speakers">
+                        <div class="sp"></div>
+                        <div class="sp"></div>
+                        <div class="sp"></div>
+                        <div class="sp"></div>
+                      </div>
+                    </div>
+                    <div id="bigbluebutton"></div>
+                    <div id="barbutton1"></div>
+                    <div id="barbutton2"></div>
+                    <div id="cross">
+                      <div id="leftcross">
+                        <div id="leftT" ng-click="nextPokeForm()" ng-hide="getPokeFormImg()==null"></div>
+                      </div>
+                      <div id="topcross">
+                        <div id="upT"></div>
+                      </div>
+                      <div id="rightcross">
+                        <div id="rightT" ng-click="prevPokeForm()" ng-hide="getPokeFormImg()==null"></div>
+                      </div>
+                      <div id="midcross">
+                        <div id="midCircle"></div>
+                      </div>
+                      <div id="botcross">
+                        <div id="downT"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="right">
+                    <div id="stats">
+                      <strong>Name :</strong> {{getPokemon().name}}<br/>
+                      <strong>Type :</strong> <span ng-repeat="type in getPokemon().types">{{type.type.name + ' '}}</span></br>
+                      <strong>Height :</strong>{{getPokemon().height}}<br/>
+                      <strong>Weight :</strong>{{getPokemon().weight}}<br/>
+                      <strong>Moves :</strong> <span ng-repeat="move in getPokemon().moves"  ng-if="$index<5">{{move.move.name + '. '}}</span></br>
+
+                    </div>
+                    <div id="blueButtons1">
+                      <div class="blueButton"></div>
+                      <div class="blueButton"></div>
+                      <div class="blueButton"></div>
+                      <div class="blueButton"></div>
+                      <div class="blueButton"></div>
+                    </div>
+                    <div id="blueButtons2">
+                      <div class="blueButton"></div>
+                      <div class="blueButton"></div>
+                      <div class="blueButton"></div>
+                      <div class="blueButton"></div>
+                      <div class="blueButton"></div>
+                    </div>
+                    <div id="miniButtonGlass4"></div>
+                    <div id="miniButtonGlass5"></div>
+                    <div id="barbutton3"></div>
+                    <div id="barbutton4"></div>
+                    <div id="yellowBox1"></div>
+                    <div id="yellowBox2"></div>
+                    <div id="bg_curve1_right"></div>
+                    <div id="bg_curve2_right"></div>
+                    <div id="curve1_right"></div>
+                    <div id="curve2_right"></div>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button class="btn btn-primary" ng-click="ok()">OK</button>
-                  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-                </div>
+
+
+
               </script>
 
             </div>
