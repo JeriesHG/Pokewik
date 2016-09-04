@@ -6,8 +6,13 @@ app.factory('pokedexFactory', ['$http', function($http) {
 
 	var urlBase = '/api/pokedex';
 
-	pokedexFactory.getPokemons = function() {
-		return $http.get(urlBase + '/all');
+	pokedexFactory.getPokemons = function(last) {
+
+		var data = {
+			last : last
+		};
+		
+		return $http({url: urlBase + '/all', params: data});
 	};
 
 	pokedexFactory.getForms = function(pokemonId){
