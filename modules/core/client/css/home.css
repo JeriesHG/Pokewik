@@ -68,14 +68,15 @@ footer {
 }
 
 #pokemonDetailBody{
-    min-height: 35vh;
-
+    min-height: 50vh;
+    background: url("../img/pokedex_background.png") center no-repeat fixed;
+    background-size: contain;
 }
 #pokemonDetailBody #detail{
-    border-left: dashed;
+    /*border-left: dashed;
 
     min-height: 35vh;
-
+*/
 }
 #pokemonType{
     text-align: center;

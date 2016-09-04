@@ -60,6 +60,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
       }
 
       // Effectively call OAuth authentication route:
+      //alert(url);
       $window.location.href = url;
     };
   }
