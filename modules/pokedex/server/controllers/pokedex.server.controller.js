@@ -49,7 +49,7 @@ exports.list = function(req, res) {
 
 	if(last < 1){
 		last = 0;
-		max = 16;
+		max = 14;
 	}
 
 	for (var i = 1;i<max;i++) {
