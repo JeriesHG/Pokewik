@@ -44,10 +44,16 @@ exports.delete = function(req, res) {
  */
 exports.list = function(req, res) {
 	var promises = [];
-	var result = [];
+	var last = req.query.last;
+	var max = 4;
 
-	for (var i = 1;i<22;i++) {
-		promises.push(p.getPokemonByName(i));
+	if(last < 1){
+		last = 0;
+		max = 16;
+	}
+
+	for (var i = 1;i<max;i++) {
+		promises.push(p.getPokemonByName(last+i));
 	}
 
 	Promise.all(promises).then(function(dataArr) {
