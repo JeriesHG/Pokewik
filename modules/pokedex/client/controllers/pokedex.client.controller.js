@@ -3,7 +3,7 @@
 angular.module('pokedex', ['infinite-scroll']).controller('PokedexController', ['$scope', 'pokedexFactory', '$modal',
   function($scope, pokedexFactory, $modal) {
 
-    var isGettingPokemon = false;;
+    var isGettingPokemon = false;
     $scope.pokemons = [];
     $scope.showSpinner = true;
 
