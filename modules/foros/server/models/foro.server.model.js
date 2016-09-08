@@ -32,4 +32,25 @@ var ForoSchema = new Schema({
   }
 });
 
+var ComentarioSchema = new Schema({
+  contenido: {
+    type: String,
+    default: '',
+    required: 'Por favor escriba un contenido',
+    trim: false
+  },
+  created: {
+    type: Date,
+    default: Date.now
+  },
+  user: {
+    type: Schema.ObjectId,
+    ref: 'User'
+  },
+  foroId : {
+    type: Number
+  }
+});
+
 mongoose.model('Foro', ForoSchema);
+mongoose.model('Comentario', ComentarioSchema);

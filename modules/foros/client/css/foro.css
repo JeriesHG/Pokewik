@@ -1,11 +1,21 @@
 p{
 	color: #fff;	
 }
+h1{
+	color: #fff;
+}
 .view-foro{
-    background-color: rgba(255, 9, 9, 0.48);
+    background-color: rgba(0, 0, 0, 0.48);
     border-radius: 5px;
     padding: 1px 7px 30px 9px;
 }
 .text-muted{
 	color: rgba(169, 169, 169, 0.8);
+}
+.modal-body textarea{
+    width: 97%;
+    height: 100%;
+    min-height: 110px;
+    resize: none;
+    margin: 0px 0px 0px 8px;
 }

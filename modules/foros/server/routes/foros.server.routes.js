@@ -12,6 +12,10 @@ module.exports = function(app) {
     .get(foros.list)
     .post(foros.create);
 
+  app.route('/api/comentarios/:foroId').all(forosPolicy.isAllowed)
+    .get(foros.listComentarios)
+    .post(foros.createComentario); 
+
   app.route('/api/foros/:foroId').all(forosPolicy.isAllowed)
     .get(foros.read)
     .put(foros.update)

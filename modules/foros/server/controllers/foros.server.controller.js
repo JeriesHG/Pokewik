@@ -6,6 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   Foro = mongoose.model('Foro'),
+  Comentario = mongoose.model('Comentario'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
 
@@ -23,6 +24,37 @@ exports.create = function(req, res) {
       });
     } else {
       res.jsonp(foro);
+    }
+  });
+};
+
+exports.createComentario = function(req, res){
+  var comentario = new Comentario(req.body);
+  comentario.user = req.user;
+  comentario.foroId = req.params.foroId;
+
+  comentario.save(function(err){
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.jsonp(comentario);
+    }
+  });
+};
+
+/**
+ * List of Comentarios
+ */
+exports.listComentarios = function(req, res) {
+  Comentario.find({'foroId': req.params.foroId}).sort('-created').populate('user', 'displayName').exec(function(err, comentarios) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.jsonp(comentarios);
     }
   });
 };
