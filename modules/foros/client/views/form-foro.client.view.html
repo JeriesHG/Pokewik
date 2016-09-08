@@ -6,10 +6,17 @@
     <form name="vm.form.foroForm" class="form-horizontal" ng-submit="vm.save(vm.form.foroForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
+          <label class="control-label" for="name">Titulo</label>
           <input name="name" type="text" ng-model="vm.foro.name" id="name" class="form-control" placeholder="Name" required>
           <div ng-messages="vm.form.foroForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Foro name is required.</p>
+            <p class="help-block error-text" ng-message="required">El titulo del foro es requerido.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="contenido">Contenido: </label>
+          <textarea name="contenido" ng-model="vm.foro.contenido" id="contenido" class="form-control" placeholder="Contenido" required/>
+          <div ng-messages="vm.form.foroForm.contenido.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Tema/Comentario es requerido</p>
           </div>
         </div>
         <div class="form-group">

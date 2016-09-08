@@ -13,8 +13,14 @@ var ForoSchema = new Schema({
   name: {
     type: String,
     default: '',
-    required: 'Please fill Foro name',
+    required: 'Por favor escriba un titulo',
     trim: true
+  },
+  contenido: {
+    type: String,
+    default: '',
+    required: 'Por favor escriba un contenido',
+    trim: false
   },
   created: {
     type: Date,

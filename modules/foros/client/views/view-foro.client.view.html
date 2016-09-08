@@ -1,6 +1,9 @@
-<section>
+<section class="view-foro">
   <div class="page-header">
     <h1 ng-bind="vm.foro.name"></h1>
+  </div>
+   <div class="lead">
+    <p ng-bind="vm.foro.contenido"></p>
   </div>
   <div class="pull-right"
        ng-show="vm.foro.isCurrentUserOwner">
@@ -22,5 +25,5 @@
       <span ng-if="!vm.foro.user">Deleted User</span>
     </em>
   </small>
-  <p class="lead" ng-bind="vm.foro.content"></p>
+  <!-- <p class="lead" ng-bind="vm.foro.contenido"></p> -->
 </section>
