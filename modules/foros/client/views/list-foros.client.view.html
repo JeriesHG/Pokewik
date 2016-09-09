@@ -14,6 +14,7 @@
         <span ng-if="!foro.user">Deleted User</span>
       </small>
       <h4 class="list-group-item-heading" ng-bind="foro.name"></h4>
+      <p class="list-group-item-heading" ng-bind="foro.contenido"></p>
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.foros.$resolved && !vm.foros.length">

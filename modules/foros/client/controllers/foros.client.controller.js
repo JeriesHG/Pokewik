@@ -6,9 +6,9 @@
     .module('foros')
     .controller('ForosController', ForosController);
 
-  ForosController.$inject = ['$scope', '$state', '$window', 'Authentication', 'foroResolve'];
+  ForosController.$inject = ['$scope', '$state', '$window', 'Authentication', 'foroResolve','$modal','$http','$log'];
 
-  function ForosController ($scope, $state, $window, Authentication, foro) {
+  function ForosController ($scope, $state, $window, Authentication, foro,$modal,$http,$log) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -49,5 +49,82 @@
         vm.error = res.data.message;
       }
     }
+
+
+    function getComments(){
+      $http({
+        url:'/api/comentarios',
+        method:'GET',
+        params:{"foroId":vm.foro._id}
+      }).then(function successCallback(response) {
+        // this callback will be called asynchronously
+        // when the response is available
+        $scope.comentarios = response.data;
+      }, function errorCallback(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+        alert("something was grong");
+      });
+    }
+    getComments();
+
+
+
+    $scope.animationsEnabled = true;
+
+    $scope.modalComentario = function (foroId,size) {
+
+      var modalInstance = $modal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: 'modalComentario',
+        controller: 'commentController',
+        size: size,
+        resolve: {
+          foroId: function () {
+            return foroId;
+          }
+        }
+      });
+
+      modalInstance.result.then(function (selectedItem) {
+        $scope.selected = selectedItem;
+      }, function () {
+        $log.info('Modal dismissed at: ' + new Date());
+      });
+    };
+
   }
+
+
+  angular
+      .module('foros')
+      .controller('commentController', commentController);
+
+      function commentController($scope,$http,foroId){
+        //alert(foroId);
+        $scope.comment = "default Comment";
+        $scope.saveComment =  function(){
+          var data = {
+            contenido:$scope.comment,
+            foroId:foroId
+          };
+
+
+          $http({
+            url:'/api/comentarios',
+            method:'POST',
+            data:data
+          }).then(function successCallback(response) {
+            // this callback will be called asynchronously
+            // when the response is available
+            alert('Tooo Bien');
+          }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            alert("something was grong");
+          });
+
+        };
+
+      }
 }());

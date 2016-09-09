@@ -48,7 +48,7 @@ var ComentarioSchema = new Schema({
     ref: 'User'
   },
   foroId : {
-    type: Number
+    type: String
   }
 });
 
