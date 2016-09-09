@@ -717,16 +717,132 @@
 		-o-box-shadow: -10px 9px #5e0000;
 	}
 
+
+.Bug
+{
+	background-image: url("../img/bug.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+.Electric
+{
+	background-image: url("../img/electric.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+
+.Fire
+{
+	background-image: url("../img/fire.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+	
+	
+}
+.Water
+{
+	background-image: url("../img/water.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+.Poison
+{
+	background-image: url("../img/poison.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+
+.Flying
+{
+	background-image: url("../img/flying.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+.Grass
+{
+	background-image: url("../img/grass.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+
+.Dark
+{
+	background-image: url("../img/dark.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+.Dragon
+{
+	background-image: url("../img/dragon.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+.Fairy
+{
+	background-image: url("../img/fairy.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+.Figthing
+{
+	background-image: url("../img/fighting.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+
+.Ghost
+{
+	background-image: url("../img/ghost.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+
+.Ground
+{
+	background-image: url("../img/ground.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+
+.Ice
+{
+	background-image: url("../img/ice.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+.Normal
+{
+	background-image: url("../img/normal.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+.Psychic
+{
+	background-image: url("../img/psychic.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+.Rock
+{
+	background-image: url("../img/rock.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
+.Steel
+{
+	background-image: url("../img/steel.png");
+	background-size: 35% 40%;
+	background-repeat: no-repeat;
+}
 	div#stats
 	{
-		height: 160px;
-		width: 270px;
+		height: 260px;
+		width: 300px;
 		padding: 10px;
-		background-color: #30da0c;
 		z-index: 1;
-		font-size: 13px;
+		font-size: 15px;
 		font-family: arial, sans-serif;
-
+		background-color: #fff;
 		position: absolute;
 		top: 110px;
 		left: 25px;
@@ -740,10 +856,7 @@
 		-webkit-box-shadow: 0 0 20px #003300 inset;
 		-moz-box-shadow: 0 0 20px #003300 inset;
 		-o-box-shadow: 0 0 20px #003300 inset;
-		animation-name:Details ;
-		animation-duration: 20s;
-		animation-delay: 2s;
-		animation-iteration-count: 10;
+		
 	}
 
 	div#blueButtons1
