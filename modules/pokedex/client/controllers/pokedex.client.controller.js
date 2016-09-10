@@ -68,8 +68,89 @@ angular.module('pokedex', ['infinite-scroll']).controller('PokedexController', [
 
 
 angular.module('pokedex').controller('ModalPokemonDetail', function($scope, $modalInstance, pokedexFactory, pokemon) {
+
+
   $scope.getPokemon = function() {
+
+    console.log(pokemon);
     return pokemon;
+  };
+
+  $scope.ChangeBackground = function()
+  {
+    switch(pokemon.types[0].type.name)
+    {
+      case "bug":
+        return "Bug";
+      
+
+      case "dark":
+        return "Dark";
+      
+
+      case "dragon":
+        return "Dragon";
+      
+
+      case "electric":
+        return "Electric";
+      
+
+      case "fairy":
+        return "Fairy";
+      
+
+      case "fighting":
+        return "Fighting";
+      
+       case "fire":
+        return "Fire";
+      
+      case "flying":
+        return "Flying";
+      
+
+      case "ghost":
+        return "Ghost";
+      
+
+      case "grass":
+        return "Grass";
+      
+
+      case "ground":
+        return "Ground";
+      
+
+      case "ice":
+        return "Ice";
+      
+
+      case "normal":
+        return "Normal";
+      
+
+      case "poison":
+        return "Poison";
+      
+
+      case "psychic":
+        return "Psychic";
+      
+
+      case "rock":
+        return "Rock";
+      
+
+      case "steel":
+        return "Steel";
+      
+
+      case "water":
+        return "Water";
+      
+    }
+   
   };
   var pokeForms = [];
   var idxPokeForm = 2;
