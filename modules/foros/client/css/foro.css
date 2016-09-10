@@ -19,3 +19,15 @@ h1{
     resize: none;
     margin: 0px 0px 0px 8px;
 }
+
+.view-comment{
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.48);
+    border-radius: 5px;
+    padding: 1px 7px 30px 9px;
+}
+
+
+.view-comment button{
+    float: right;
+}
