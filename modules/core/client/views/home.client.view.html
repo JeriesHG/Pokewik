@@ -109,14 +109,52 @@
             </div>
           </div>
           <div id="right" >
+          
             <div id="stats" >
-              <strong>Name :</strong> {{getPokemon().name}}<br/>
-              <strong>Type :</strong> <span ng-repeat="type in getPokemon().types">{{type.type.name + ' '}}</span></br>
-              <strong>Height :</strong>{{getPokemon().height}}<br/>
-              <strong>Weight :</strong>{{getPokemon().weight}}<br/>
-              <strong>Moves :</strong> <span ng-repeat="move in getPokemon().moves"  ng-if="$index<5">{{move.move.name + '. '}}</span></br>
+
+             <table>
+             <td></td>
+             <td><strong>{{getPokemon().name}}</strong></td>
+             </tr>
+             <tr>
+             <td>
+             &nbsp;
+             </td>
+             </tr>
+             <tr>
+              <td><strong>Type:</strong></td> 
+              <td><span>{{getPokemon().types[0].type.name + ' '}}</span></td>
+              <td align=right><span >{{getPokemon().types[1].type.name + ''}}</span></td>
+              <td></td>
+             </tr>
+             <tr>
+             <td>
+             &nbsp;
+             </td>
+             </tr>
+             <tr>
+              <td ><strong>Height:</strong></td>
+              <td align=center><span>{{getPokemon().height}}</span></td>
+             </tr>
+             <tr>
+             <td>
+             &nbsp;
+             </td>
+             </tr>
+             <tr> 
+              <td><strong>Weight:</strong></td>
+              <td align=center><span>{{getPokemon().weight}}</span></td>
+             </tr>
+             <tr>
+             <td>
+             &nbsp;
+             </td>
+             </tr>
+            </table>
+
+            <strong>Moves :</strong> <span ng-repeat="move in getPokemon().moves"  ng-if="$index<10">{{move.move.name + ' '}}</span></br>
               
-            <div ng-class="ChangeBackground()" style="width:300px; height:300px;margin-left:200px;margin-top:50px;position:fixed"> 
+            <div ng-class="ChangeBackground()" id="ImgType"> 
             </div>
              
             </div>  
@@ -124,8 +162,7 @@
             <div id="miniButtonGlass4"></div>
             <div id="miniButtonGlass5"></div>
             
-            <div id="yellowBox1"></div>
-            <div id="yellowBox2"></div>
+           
             <div id="bg_curve1_right"></div>
             <div id="bg_curve2_right"></div>
             <div id="curve1_right"></div>

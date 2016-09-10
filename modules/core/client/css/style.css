@@ -783,7 +783,7 @@
 	background-size: 35% 40%;
 	background-repeat: no-repeat;
 }
-.Figthing
+.Fighting
 {
 	background-image: url("../img/fighting.png");
 	background-size: 35% 40%;
@@ -836,16 +836,16 @@
 }
 	div#stats
 	{
-		height: 260px;
+		height: 330px;
 		width: 300px;
-		padding: 10px;
+		padding: 15px;
 		z-index: 1;
-		font-size: 15px;
-		font-family: arial, sans-serif;
+		
 		background-color: #fff;
 		position: absolute;
 		top: 110px;
 		left: 25px;
+
 
 		border-radius: 15px;
 		-webkit-border-radius: 15px;
@@ -857,6 +857,20 @@
 		-moz-box-shadow: 0 0 20px #003300 inset;
 		-o-box-shadow: 0 0 20px #003300 inset;
 		
+	}
+	div#stats strong
+	{	
+
+		font-size: 15px;
+		font-family: Verdana, sans-serif;
+		text-transform: uppercase;
+	}
+
+	div#stats span
+	{	
+
+		font-size: 17px;
+		text-transform: capitalize;
 	}
 
 	div#blueButtons1
@@ -972,8 +986,8 @@
 		z-index: 1;
 
 		position: absolute;
-		top: 383px;
-		left: 25px;
+		top: 460px;
+		left: 50px;
 
 		box-shadow: 0 0 10px #490000;
 		-webkit-box-shadow: 0 0 10px #490000;
@@ -991,6 +1005,19 @@
 		background: -o-radial-gradient(#ff9b5b, #fb6505);
 	}
 
+	div#ImgType
+	{
+		width: 300px;
+		height: 300px;
+		float: left;
+		z-index: 1;
+
+		position: fixed;
+		top: 360px;
+		left: 640px;
+
+	}
+
 	div#miniButtonGlass5
 	{
 		width: 15px;
@@ -999,8 +1026,8 @@
 		z-index: 1;
 
 		position: absolute;
-		top: 383px;
-		left: 51px;
+		top: 460px;
+		left: 80px;
 
 		box-shadow: 0 0 10px #490000;
 		-webkit-box-shadow: 0 0 10px #490000;
@@ -1020,13 +1047,13 @@
 
 	div#yellowBox1
 	{
-		width: 140px;
-		height: 70px;
+		width: 100px;
+		height: 20px;
 		z-index: 1;
 		background-color: #ffff00;
 
 		position: absolute;
-		top: 415px;
+		top: 470px;
 		left: 25px;
 
 		border-radius: 15px;
@@ -1042,8 +1069,8 @@
 
 	div#yellowBox2
 	{
-		width: 140px;
-		height: 70px;
+		width: 100px;
+		height: 20px;
 		z-index: 1;
 		background-color: #ffff00;
 
