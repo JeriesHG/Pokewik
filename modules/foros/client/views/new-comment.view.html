@@ -1,0 +1,21 @@
+
+
+
+  <script type="text/ng-template" id="modalComentario">
+    <div class="modal-header">
+      <h4 class="modal-title">Nuevo comentario</h4>
+    </div>
+    <div class="modal-body">
+      <form name="vm.form.comentarioForm" class="form-horizontal" ng-submit="vm.saveComment(vm.form.comentarioForm.$valid)" novalidate>
+        <div class="form-group" show-errors>
+          <textarea name="contenido" ng-model="comment" id="contenido" class="form-control" placeholder="Contenido" required/>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary" type="button" ng-click="saveComment()">OK</button>
+      <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+  </script>
+
+

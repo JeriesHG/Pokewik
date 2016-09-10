@@ -31,7 +31,7 @@ exports.create = function(req, res) {
 exports.createComentario = function(req, res){
   var comentario = new Comentario(req.body);
   comentario.user = req.user;
-  comentario.foroId = req.params.foroId;
+  //comentario.foroId = req.params.foroId;
 
   comentario.save(function(err){
     if (err) {
@@ -48,12 +48,15 @@ exports.createComentario = function(req, res){
  * List of Comentarios
  */
 exports.listComentarios = function(req, res) {
-  Comentario.find({'foroId': req.params.foroId}).sort('-created').populate('user', 'displayName').exec(function(err, comentarios) {
+  console.log("entramos a listar omentarios");
+
+  Comentario.find({'foroId': req.query.foroId}).sort('-created').populate('user').exec(function(err, comentarios) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
+      console.log(comentarios);
       res.jsonp(comentarios);
     }
   });
