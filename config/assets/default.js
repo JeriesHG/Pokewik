@@ -19,7 +19,8 @@ module.exports = {
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/infinite-scroll/ng-infinite-scroll.min.js',
         'public/lib/bootstrap/dist/js/bootstrap.min.js',
-        'public/lib/owasp-password-strength-test/owasp-password-strength-test.js'
+        'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
+        'public/lib/pusher-websocket-iso/dist/web/pusher.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },

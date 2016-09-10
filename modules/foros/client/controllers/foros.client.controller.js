@@ -18,6 +18,9 @@
     vm.remove = remove;
     vm.save = save;
 
+    /*var pusher = new Pusher('d0dc8cc42fd63bd7563f', {
+      encrypted: true
+    });*/
     // Remove existing Foro
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
@@ -49,7 +52,11 @@
         vm.error = res.data.message;
       }
     }
-
+/*
+    var channel = pusher.subscribe('test_channel');
+    channel.bind('my_event', function(data) {
+      alert(  data.message);
+    });*/
 
     function getComments(){
       $http({
@@ -86,8 +93,9 @@
         }
       });
 
-      modalInstance.result.then(function (selectedItem) {
-        $scope.selected = selectedItem;
+      modalInstance.result.then(function (object) {
+        //$scope.selected = selectedItem;
+        getComments();
       }, function () {
         $log.info('Modal dismissed at: ' + new Date());
       });
@@ -100,9 +108,9 @@
       .module('foros')
       .controller('commentController', commentController);
 
-      function commentController($scope,$http,foroId){
+      function commentController($scope,$http,foroId,$modalInstance){
         //alert(foroId);
-        $scope.comment = "default Comment";
+        $scope.comment = "";
         $scope.saveComment =  function(){
           var data = {
             contenido:$scope.comment,
@@ -117,13 +125,22 @@
           }).then(function successCallback(response) {
             // this callback will be called asynchronously
             // when the response is available
-            alert('Tooo Bien');
+            $modalInstance.close();
           }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
             alert("something was grong");
           });
 
+        };
+
+
+        $scope.ok = function() {
+          $modalInstance.close();
+        };
+
+        $scope.cancel = function() {
+          $modalInstance.dismiss('cancel');
         };
 
       }

@@ -6,6 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   Foro = mongoose.model('Foro'),
+  Pusher = require('pusher'),
   Comentario = mongoose.model('Comentario'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
@@ -31,6 +32,15 @@ exports.create = function(req, res) {
 exports.createComentario = function(req, res){
   var comentario = new Comentario(req.body);
   comentario.user = req.user;
+  var pusher = new Pusher({
+    appId: '244992',
+    key: 'd0dc8cc42fd63bd7563f',
+    secret: 'dce4f073d1c40aa8f228',
+    encrypted: true
+  });
+  pusher.trigger('test_channel', 'my_event', {
+    "message": comentario
+  });
   //comentario.foroId = req.params.foroId;
 
   comentario.save(function(err){
